@@ -31,7 +31,13 @@ export const loginValidator = [
 
 export const updatePasswordValidator = [
     validateJWT,
-    body("newPassword").isLength({ min: 8 }).withMessage("El password debe contener al menos 8 caracteres"),
+    body("newPassword").isStrongPassword({
+        minLength: 8,
+        minLowercase: 1,
+        minUppercase: 1,
+        minNumbers: 1,
+        minSymbols: 1
+    }),
     validarCampos,
     handleErrors
 ];
