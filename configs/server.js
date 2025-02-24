@@ -9,6 +9,7 @@ import { swaggerDocs, swaggerUi } from "./swagger.js";
 import  apiLimiter from "../src/middlewares/rate-limit-validator.js";
 import authRoutes from "../src/auth/auth.routes.js"
 import userRoutes from "../src/user/user.routes.js"
+import {createAdmin} from "./default-data.js"
 
 
 const middlewares = (app) => {
@@ -41,6 +42,7 @@ export const initServer = () => {
         middlewares(app);
         conectarDB();
         routes(app);
+        createAdmin();
         const port = process.env.PORT; 
         app.listen(port, () => {
             console.log(`Server running on port ${port}`);
