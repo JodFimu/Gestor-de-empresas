@@ -1,4 +1,5 @@
 import User from "../src/user/user.model.js"
+import Category from "../src/category/category.model.js"
 import {hash} from "argon2"
 
 export const createAdmin = async () => {
@@ -28,3 +29,27 @@ export const createAdmin = async () => {
       console.error("Error al crear el admin por defecto:", err)
     }
 };
+
+export const createDefaultCategory = async () => {
+  try {
+    const name = "anything"
+    const description = "anything"
+
+    const existingCategory = await Category.findOne({ name })
+
+    if (!existingCategory) {
+      const newCategory = new Category({
+        name,
+        description
+      });
+
+      await newCategory.save()
+      console.log("Categoria creada exitosamente")
+
+    }else{
+      console.log("Categoría ya creada")
+    }
+    } catch (err) {
+    console.error("Error al crear las categorias:", err)
+  }
+}
