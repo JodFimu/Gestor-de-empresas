@@ -40,4 +40,14 @@ enterpriseSchema.methods.toJSON = function(){
     return enterprise
 }
 
+enterpriseSchema.pre('create').get(function () {
+    const añoActual = new Date().getFullYear();
+    return añoActual - this.years;
+});
+
+enterpriseSchema.pre('findByIdAndUpdate').get(function () {
+    const añoActual = new Date().getFullYear();
+    return añoActual - this.years;
+});
+
 export default model('Enterprise', enterpriseSchema);

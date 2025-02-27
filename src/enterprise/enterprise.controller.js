@@ -14,16 +14,7 @@ export const createEnterprise = async (req, res) =>{
             })
         }
 
-        const años = new Date().getFullYear() - data.fundacion;
-
-
-        const enterprise = await Enterprise.create({
-            name: data.name,
-            description: data.description,
-            rate: data.rate,
-            category: data.category,
-            years: años
-        });
+        const enterprise = await Enterprise.create(data);
 
         return res.status(200).json({
             succes: true,
