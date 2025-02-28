@@ -23,6 +23,9 @@ export const createEnterprise = async (req, res) =>{
         })
         
     } catch (err) {
-        
+        return res.status(500).json({
+            succes: false,
+            message: "Error al agregar la empresa"
+        })
     }
 }

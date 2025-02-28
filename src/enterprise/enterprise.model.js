@@ -20,9 +20,13 @@ const enterpriseSchema = new Schema({
         ref: 'Category',
         required: true
     },
+    fundationYear: {
+        type: Number,
+        required: true  
+    },
     years: {
         type: Number,
-        required: true
+        default: 0
     },
     status:{
         type: Boolean,
@@ -40,14 +44,20 @@ enterpriseSchema.methods.toJSON = function(){
     return enterprise
 }
 
-enterpriseSchema.pre('create').get(function () {
+enterpriseSchema.pre("save", function (next) {
     const añoActual = new Date().getFullYear();
-    return añoActual - this.years;
+    this.years = añoActual - this.fundationYear;
+    next();
 });
 
-enterpriseSchema.pre('findByIdAndUpdate').get(function () {
-    const añoActual = new Date().getFullYear();
-    return añoActual - this.years;
+enterpriseSchema.pre('findByIdAndUpdate', function (next) {
+    const update = this.getUpdate();
+
+    if(update.fundationYear){
+        const añoActual = new Date().getFullYear();
+        update.years = añoActual - update.fundationYear;
+    }
+    next();
 });
 
 export default model('Enterprise', enterpriseSchema);

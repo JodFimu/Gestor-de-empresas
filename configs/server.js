@@ -11,7 +11,7 @@ import authRoutes from "../src/auth/auth.routes.js"
 import userRoutes from "../src/user/user.routes.js"
 import categoryRoutes from "../src/category/category.routes.js"
 import {createAdmin, createDefaultCategory} from "./default-data.js"
-import enterpriseRoutes from "../src/enterprise/enterprise.routes..js"
+import enterpriseRoutes from "../src/enterprise/enterprise.routes.js"
 
 
 const middlewares = (app) => {
