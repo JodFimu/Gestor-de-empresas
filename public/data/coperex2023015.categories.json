@@ -1,0 +1,39 @@
+[{
+  "_id": {
+    "$oid": "67be7daaa99d31ce275bf54d"
+  },
+  "name": "anything",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-26T02:34:18.501Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T02:34:18.501Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c26464beb6f3362c9cef5a"
+  },
+  "name": "tecnologia",
+  "status": false,
+  "createdAt": {
+    "$date": "2025-03-01T01:35:32.277Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T01:44:44.805Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c2682c11616f38ce469399"
+  },
+  "name": "Medicina",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-01T01:51:40.678Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T01:51:40.678Z"
+  }
+}]

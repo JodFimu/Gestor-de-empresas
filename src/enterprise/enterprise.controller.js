@@ -12,10 +12,7 @@ export const createEnterprise = async (req, res) =>{
         const category = await Category.findById(data.category)
 
         if(!category){
-            return res.status(400).json({
-                succes: false,
-                message: "Categoria no encontrada"
-            })
+            data.category =  await Category.findOne({name: "anything"})
         }
 
         const enterprise = await Enterprise.create(data);

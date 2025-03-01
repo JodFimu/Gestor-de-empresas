@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "c9209efa-2ea8-4273-b970-47114a4eb26b",
+		"name": "Gestor de empresas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41959042"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"Adm123456*/\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/interferCoperex/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"interferCoperex",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "updatePassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlN2QxOGQ0NWQwZmRjOGMxYjU3YjAiLCJpYXQiOjE3NDA1Mzc0MDYsImV4cCI6MTc0MDU0MTAwNn0.tgL0Bqk_E-yacjb8YPCBV6c8Etd2yENy60wYvZCDt64",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPassword\": \"Minad0987*_\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/interferCoperex/v1/user/updatePassword",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"interferCoperex",
+								"v1",
+								"user",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlN2VhZDUyMWQzMmNjMDE2YTVlNWMiLCJpYXQiOjE3NDA3OTI5MTMsImV4cCI6MTc0MDc5NjUxM30.WmMWkzKqCmniEq84QzXzwj5JuqpwGXlEv-lqjfZLTS0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/interferCoperex/v1/category/deleteCategory/67c26464beb6f3362c9cef5a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"interferCoperex",
+								"v1",
+								"category",
+								"deleteCategory",
+								"67c26464beb6f3362c9cef5a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlN2VhZDUyMWQzMmNjMDE2YTVlNWMiLCJpYXQiOjE3NDA1Mzc4MjAsImV4cCI6MTc0MDU0MTQyMH0.QUWcgMjXN10sDQDichDUb1w2lbMJiQgCw03WBdO_Odk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"tec\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/interferCoperex/v1/category/updateCategory/67be7ff715e0e81d0aaada5f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"interferCoperex",
+								"v1",
+								"category",
+								"updateCategory",
+								"67be7ff715e0e81d0aaada5f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlN2VhZDUyMWQzMmNjMDE2YTVlNWMiLCJpYXQiOjE3NDA1Mzc4MjAsImV4cCI6MTc0MDU0MTQyMH0.QUWcgMjXN10sDQDichDUb1w2lbMJiQgCw03WBdO_Odk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/interferCoperex/v1/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"interferCoperex",
+								"v1",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlN2VhZDUyMWQzMmNjMDE2YTVlNWMiLCJpYXQiOjE3NDA3OTI5MTMsImV4cCI6MTc0MDc5NjUxM30.WmMWkzKqCmniEq84QzXzwj5JuqpwGXlEv-lqjfZLTS0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"tecnologia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/interferCoperex/v1/category/createCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"interferCoperex",
+								"v1",
+								"category",
+								"createCategory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "enterprise",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlN2VhZDUyMWQzMmNjMDE2YTVlNWMiLCJpYXQiOjE3NDA3OTI5MTMsImV4cCI6MTc0MDc5NjUxM30.WmMWkzKqCmniEq84QzXzwj5JuqpwGXlEv-lqjfZLTS0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Kinal\",\r\n    \"description\": \"Fundacion kinal\",\r\n    \"rate\": \"4.5\",\r\n    \"category\": \"67c26464beb6f3362c9cef5a\",\r\n    \"fundationYear\": \"1961\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/interferCoperex/v1/enterprise/addEnterprise",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"interferCoperex",
+								"v1",
+								"enterprise",
+								"addEnterprise"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JjYWU2YWMyNTc2ZjJjNTA4ODQyMjEiLCJpYXQiOjE3NDA3NTQyNzksImV4cCI6MTc0MDc1Nzg3OX0.XXs3imRNyGgT9jw_Ok1GvJsnKtQzZdfP6v0nFTExrT0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Fundacion kinal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/interferCoperex/v1/enterprise/updateEnterprise/67c1c05c8d88a9efb258fd9d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"interferCoperex",
+								"v1",
+								"enterprise",
+								"updateEnterprise",
+								"67c1c05c8d88a9efb258fd9d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "report",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlN2VhZDUyMWQzMmNjMDE2YTVlNWMiLCJpYXQiOjE3NDA3OTI5MTMsImV4cCI6MTc0MDc5NjUxM30.WmMWkzKqCmniEq84QzXzwj5JuqpwGXlEv-lqjfZLTS0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"minRate\": 2.5,\r\n    \"maxYears\": 100,\r\n    \"sort\": \"az\",\r\n    \"category\": \"67c26464beb6f3362c9cef5a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/interferCoperex/v1/enterprise/getEnterprises",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"interferCoperex",
+								"v1",
+								"enterprise",
+								"getEnterprises"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

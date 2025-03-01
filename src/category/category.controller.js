@@ -1,4 +1,5 @@
 import Category from './category.model.js';
+import Enterprise from '../enterprise/enterprise.model.js';
 
 export const getCategory = async (req, res) => {
     try {
@@ -76,7 +77,17 @@ export const deleteCategory = async (req, res) => {
 
         const category = await Category.findByIdAndUpdate(cid, { status: false }, { new: true });
 
-        //codigo para asignar las empresas a la categoria por defecto
+        const defaultCategory = await Category.findOne({ name: 'anything' });
+
+        const enterprises = await Enterprise.find({ category: cid });
+
+        console.log(defaultCategory);
+        await Promise.all(
+            enterprises.map(async (enterprise) => {
+                enterprise.category = defaultCategory._id;
+                return enterprise.save();
+            })
+        );
 
         return res.status(200).json({
             success: true,

@@ -11,7 +11,7 @@ export const addEnterpriseValidators = [
     body("name").custom(enterpriseExist),
     body("description").notEmpty().withMessage("La descripcion es requerida"),
     body("rate").isFloat({ min: 0, max: 5}),
-    body("category").isMongoId().withMessage("No es una categoria valida"),
+    body("category").optional().isMongoId().withMessage("No es una categoria valida"),
     body("fundationYear").notEmpty().withMessage("El año de fundacion es requerido"),
     body("fundationYear").isInt().withMessage("Se require un numero entero"),
     validarCampos,
@@ -25,6 +25,18 @@ export const updateEnterpriseValidators = [
     body("rate").optional().isFloat({ min: 0, max: 5}),
     body("category").optional().isMongoId().withMessage("No es una categoria valida"),
     body("fundationYear").optional().isInt().withMessage("Se require un numero entero"),
+    validarCampos,
+    handleErrors
+]
+
+export const generateReportValidators = [
+    validateJWT,
+    body("minYears").optional().isInt().withMessage("Se require un numero entero"),
+    body("maxYears").optional().isInt().withMessage("Se require un numero entero"),
+    body("category").optional().isMongoId().withMessage("No es una categoria valida"),
+    body("sort").optional().isIn(["az", "za"]).withMessage("Solo se permite ordenar por az o za"),
+    body("minRate").optional().isFloat({ min: 0, max: 5}),
+    body("maxRate").optional().isFloat({ min: 0, max: 5}),
     validarCampos,
     handleErrors
 ]
