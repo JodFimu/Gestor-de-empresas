@@ -1,0 +1,70 @@
+[{
+  "_id": {
+    "$oid": "67c264bfbeb6f3362c9cef5f"
+  },
+  "name": "Kinal",
+  "description": "Fundacion kinal",
+  "rate": 4.5,
+  "category": {
+    "$oid": "67be7daaa99d31ce275bf54d"
+  },
+  "fundationYear": 1961,
+  "years": 64,
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c2680a11616f38ce469395"
+  },
+  "name": "Empresa de software",
+  "description": "empresa de desarrollo de software",
+  "rate": 3,
+  "category": {
+    "$oid": "67c26464beb6f3362c9cef5a"
+  },
+  "fundationYear": 2020,
+  "years": 5,
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c2686511616f38ce46939e"
+  },
+  "name": "Farmaceutica",
+  "description": "empresa de farmaceutica",
+  "rate": 4.8,
+  "category": {
+    "$oid": "67c2682c11616f38ce469399"
+  },
+  "fundationYear": 1900,
+  "years": 125,
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c2694f66516ab6bd7e8619"
+  },
+  "name": "Empresa de ganaderia",
+  "description": "empresa de ganaderia",
+  "rate": 1.5,
+  "category": {
+    "$oid": "67be7daaa99d31ce275bf54d"
+  },
+  "fundationYear": 1998,
+  "years": 27,
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c2698466516ab6bd7e861f"
+  },
+  "name": "Nike",
+  "description": "empresa de deportes",
+  "rate": 4.2,
+  "category": {
+    "$oid": "67be7daaa99d31ce275bf54d"
+  },
+  "fundationYear": 1965,
+  "years": 60,
+  "status": true
+}]
